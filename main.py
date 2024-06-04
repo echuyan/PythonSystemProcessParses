@@ -37,9 +37,7 @@ def get_processes(sortby = "mem"):
 
 if __name__ == '__main__':
     text = str()
-    print(const.HEADING, end="")
     text += const.HEADING 
-    print(const.USERS,end="")
     text += const.USERS
     processes = get_processes()
     total_mem = 0
@@ -53,50 +51,35 @@ if __name__ == '__main__':
     users_list = list(users_set)
     for i, user in enumerate(users_list):
         if i != len(users_list)-1: 
-            print(user,", ",end="", sep='')
             text += user + ", "
         else:
-            print(user,sep='')
             text += user 
     text +="\n"
     
-    print(const.PROCESSES, end="")
     text += const.PROCESSES
-    print(len(processes),"\n")
     text += str(len(processes))
     text += '\n' + '\n'
    
-    print(const.USERS_PROCESSES)
     text += const.USERS_PROCESSES + '\n'
     for user in users_set:
-        print(user,": ", end="")
         text += user+": "
         i = 0
         for process in processes:
             if process["USER"] == user:
                 i+=1
-        print(i)
         text += str(i) +"\n"
-    print('\n')
     text += '\n'
-    print(const.RAM_USED, end="")
     text += const.RAM_USED
-    print(total_mem,"%")
     text += str(total_mem) + "%" + '\n'
-    print(const.CPU_USED, end="")
     text += const.CPU_USED
-    print(total_cpu,"%")
     text += str(total_cpu) + "%" +'\n'
-    print(const.MAX_RAM, end = "")
     text += const.MAX_RAM
-    print(processes[0]["COMMAND"][:20])
     text += processes[0]["COMMAND"][:20] + '\n'
-    print(const.MAX_CPU, end = "")
     text += const.MAX_CPU
     processes = get_processes("cpu")
-    print(processes[0]["COMMAND"][:20])
     text += processes[0]["COMMAND"][:20] + '\n'
 
+    print(text)
     filename = str(datetime.now())
     with open(filename,"w") as file:
         print(text, file = file)

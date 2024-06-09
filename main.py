@@ -80,6 +80,6 @@ if __name__ == '__main__':
     text += processes[0]["COMMAND"][:20] + '\n'
 
     print(text)
-    filename = str(datetime.now())
+    filename = str(datetime.now()) +'.txt'
     with open(filename,"w") as file:
         print(text, file = file)

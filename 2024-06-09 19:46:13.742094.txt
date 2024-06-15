@@ -1,0 +1,20 @@
+Отчёт о состоянии системы:
+Пользователи системы: colord, systemd+, syslog, avahi, kernoops, elena, rtkit, root, message+
+Процессов запущено: 220
+
+Пользовательских процессов: 
+colord: 1
+systemd+: 3
+syslog: 1
+avahi: 2
+kernoops: 2
+elena: 88
+rtkit: 1
+root: 121
+message+: 1
+
+Всего памяти используется: 39.900000000000034%
+Всего CPU используется: 2.8000000000000003%
+Больше всего памяти использует: /usr/bin/gnome-shell
+Больше всего CPU использует: /usr/bin/gnome-shell
+
